@@ -1,0 +1,15 @@
+<h3>Lista gatunów</h3>
+<ul>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Nazwa gatunku</th>
+    </tr>
+    <tr *ngFor="let gat of gatunki"
+        [class.selected]="gat === selectedGatunek" (click)="onSelect(gat)">
+      <td>{{gat.id}}</td>
+      <td>{{gat.nazwa}}</td>
+      <button class="btn btn-danger" (click)="delete(gat)">usun</button>
+    </tr>
+  </table>
+</ul>
